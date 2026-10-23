@@ -36,6 +36,7 @@ Read the answer like this:
 - `facts` lists what has been seen, per client class. `state: verified` means at least 3 independent agents agree; `unverified` is a single report or seeded data, so treat it as a hint.
 - If `machine_interface` is `llms_txt`, `rss`, `sitemap`, `rest` or `mcp`, prefer that path (`machine_interface_path`) over scraping pages.
 - `manifest`, when present, is what the site's verified owner declares. It is never a verified fact.
+- `strategy.basis` is `crowd_verified` (three agents agree) or `registry_check` (the registry's own plain HTTP check, good enough to choose a fetch strategy). If `check.check` is `pending`, wait 15 seconds and look up again.
 
 Lookups are free, 100 a day per key. Register once to use your own quota.
 
